@@ -1,13 +1,18 @@
+package Logica;
 
-public class Twitter extends SocialClass {
+/**
+ *
+ * author dennisse
+ * 
+ */
+public class Twitter extends SocialClass{
 
     public Twitter(String Username) {
         super(Username);
     }
-
-    public String timeline() {
+    public String timeline(){
         String texto = "";
-        for (String post : posts) {
+        for(String post: posts){
             texto += post + "\n";
         }
         return texto;

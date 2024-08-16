@@ -1,8 +1,15 @@
 
+package Logica;
+
+import java.io.Serializable;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
-public abstract class SocialClass {
-
+/**
+ *
+ * 
+ */
+public abstract class SocialClass{
     protected ArrayList<String> friends;
     protected ArrayList<String> posts;
     protected String Username;
@@ -12,29 +19,28 @@ public abstract class SocialClass {
         friends = new ArrayList();
         posts = new ArrayList();
     }
-
-    public boolean addFriend(String user) {
-        if (friends != null && friends.contains(user)) {
+    
+    public boolean addFriend(String user){
+        if(friends != null && friends.contains(user)){
             return false;
         }
         friends.add(user);
         return true;
     }
-
-    public void addPost(String msg) {
+    
+    public void addPost(String msg){
         posts.add(msg);
     }
-
+    
     public abstract String timeline();
-
-    public String myProfile() {
+    
+    public String myProfile(){
         String texto = "   Perfil: " + Username + "\n   Posts: \n   ";
         texto += timeline() + "\n   Amigos:\n   ";
-        for (String friend : friends) {
+        for(String friend: friends){
             texto += (friend + " ");
-            if (friends.indexOf(friend) % 9 == 0) {
-                texto += "\n";
-            }
+            if(friends.indexOf(friend)%9 == 0)
+                texto+="\n"; 
         }
         return texto;
     }
@@ -50,5 +56,6 @@ public abstract class SocialClass {
     public ArrayList<String> getPosts() {
         return posts;
     }
-
+    
+    
 }

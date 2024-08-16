@@ -1,10 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Logica;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
-
+/**
+ *
+ * author dennisse
+ * 
+ */
 public final class Comment {
-
     int postId;
     String autor;
     String contenido;
@@ -16,11 +24,11 @@ public final class Comment {
         this.contenido = contenido;
         fecha = Calendar.getInstance();
     }
-
-    public String print() {
+    
+    public String print(){
         return "   " + autor + "- " + new SimpleDateFormat("dd/MM/yy").format(fecha.getTime()) + "\n  " + contenido;
     }
-
+    
     public int getPostId() {
         return postId;
     }
@@ -36,5 +44,6 @@ public final class Comment {
     public Calendar getFecha() {
         return fecha;
     }
-
+    
+    
 }
